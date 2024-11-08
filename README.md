@@ -1,4 +1,4 @@
-# project-1
+# 🧩 Color Matching Memory Game 🧩
 // Color matching memory game (concentration)
 // This game you can play by yourself. 
 // Step1: Initialize Game
