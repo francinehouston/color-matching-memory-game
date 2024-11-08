@@ -89,5 +89,4 @@ Restart Option: Resets the game state and shuffles the cards, allowing the playe
 - DOM
 
 ## Future Enhancement
-- I would add a timer, add different levels to the game, e.g. complete a 16 tile grid, advance to 32 tile grid game and then to a 64 tile grid or
-- have the ability to choose between the amount of tiles inside of the game 
+- I would add a set of non-matches so the player can lose, game over; different levels to the game, e.g. complete a 16-tile grid, advance to a 32-tile grid game, and then to a 64-tile grid or have the ability to choose between the number of tiles inside of the game. 
