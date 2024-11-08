@@ -7,7 +7,7 @@
 // SHUFFLE the list of colors randomly
 // CREATE cards array to hold each card with color value and state (face down)
 // Assign each color from the shuffled list to a tile on the grid
-
+![Project-1MemoryGame](https://github.com/user-attachments/assets/5f9a3a17-7e53-4657-949f-f3458a5fe878)
 // Step 2. Initalize Game State (Set up Game State)
 // Set all tiles as "hidden"
 // Set total pairs to total number of unique color pairs (e.g., 8 pairs in a 4 X4 grid)
