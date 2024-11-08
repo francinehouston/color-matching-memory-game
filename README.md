@@ -78,8 +78,7 @@ Game link:https://francinehouston.github.io/color-matching-memory-game/
 
 ## Attributions: 
 [YouTube](https://www.youtube.com/watch?v=bznJPt4t_4s)
-[ChatGPT](https://chatgpt.com/c/67298b0f-52b8-8005-99a1-a7b7c8d893a9)
-[Chat GPT](https://chatgpt.com/c/67299008-76cc-8005-96c7-2c163a88e341)
+[ChatGPT](https://chatgpt.com)
 [CSS FLexbox Layout Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-examples)
 [Contrast Checker](https://webaim.org/resources/contrastchecker/?fcolor=E4C4ED&bcolor=000000)
 
