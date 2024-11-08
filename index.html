@@ -12,7 +12,15 @@
   <h2> Game Rule:</h2>
   <p>Match all the squares with the same color!</p>
  
-<div class = "tiles"></div>
+  <form class="color-count-picker-form">
+    <label for="color-count-picker">Color Count: </Label>
+    <select class="color-count-picker" id="color-count-picker">
+    <option value="8">8</option>
+    <option value="12">12</option> <option value="16">16</option>
+    </select>
+    </form>
+
+  <div class = "tiles"></div>
 
 <!--Hidden win message-->
 <div class = "hidden" id="winMessage">
@@ -20,6 +28,10 @@
 </div>
   
   <button id='reset'>Reset Game</button>
+
+  
+
+  
 
 </body>
 </html>

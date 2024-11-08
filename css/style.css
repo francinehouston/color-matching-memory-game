@@ -39,7 +39,13 @@ button {
 
 #winMessage {
   text-align: center;
-  color: lightblue;
+  color:lightblue;
   font-size: 2em;
   margin-top: 20px;
+}
+.color-count-picker-form {
+  text-align: center;
+  color: hotpink;
+  font-size: 1em;
+
 }
