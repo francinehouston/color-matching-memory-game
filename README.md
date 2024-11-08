@@ -74,7 +74,7 @@ Restart Option: Resets the game state and shuffles the cards, allowing the playe
 ![Project-1MemoryGame](https://github.com/user-attachments/assets/5f9a3a17-7e53-4657-949f-f3458a5fe878)
 
 
-Game link:
+Game link:https://francinehouston.github.io/color-matching-memory-game/
 
 ## Attributions: 
 YouTube https://www.youtube.com/watch?v=bznJPt4t_4s
