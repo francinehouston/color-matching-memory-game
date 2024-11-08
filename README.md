@@ -57,12 +57,12 @@
 - END WHILE
 
  # Step 7: Restart Option
- -FUNCTION restartGame() or Function resetGame
- -RESET matchedPairs to 0
- -Clear and shuffle colors
- -REINITIALIZE cards and display them face down
- -END FUNCTION
- -END MemoryGAme or resetGame to play again
+ - FUNCTION restartGame() or Function resetGame
+ - RESET matchedPairs to 0
+ - Clear and shuffle colors
+ - REINITIALIZE cards and display them face down
+ - END FUNCTION
+ - END MemoryGAme or resetGame to play again
 
 Explanation of Key Parts
 Game Initialization: Creates the color pairs, shuffles them and sets up the game board with all cards face down.
