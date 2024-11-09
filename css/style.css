@@ -1,4 +1,3 @@
-
 body {
   background: #333333;
   margin: 0;
@@ -17,11 +16,13 @@ body {
   height: 100px;
   width: 100px;
   background: #111111;
-  border: 5px solid #444444;
+  border: 5px solid #787575;
   cursor: pointer;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   text-align: center;
   color: hotpink;
 }
@@ -39,10 +40,11 @@ button {
 
 #winMessage {
   text-align: center;
-  color:lightblue;
+  color: lightblue;
   font-size: 2em;
   margin-top: 20px;
 }
+
 .color-count-picker-form {
   text-align: center;
   color: hotpink;

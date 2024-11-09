@@ -84,10 +84,22 @@
 //* Define game-specific constants here */
 //const card =document.querySelectorAll(".card");
 const tilesContainer = document.querySelector('.tiles');
-const colors = ["aqua", "aquamarine", "crimson", "blue", "dodgerblue", "gold", "greenyellow", "teal"];
+const colorsMaster = ["aqua", "aquamarine", "crimson", "blue", "dodgerblue", "gold", "greenyellow", "teal", "coral", "orchid", "plum", "salmon", "slateblue", "springgreen", "tomato", "violet"];
+let colorCount = 8;
+const colors = colorsMaster.slice(0, colorCount);
 const colorsPicklist = [...colors, ...colors];
 const tileCount = colorsPicklist.length;
+
 //console.log(colorPicklist);
+
+const colorCountPicker = document.querySelector('.color-count-picker');
+colorCountPicker.addEventListener('change', function () {
+    colorCount = parseInt(this.value);
+    colors = colorsMaster.slice(0, colorCount);
+    colorsPickList = [...colors, ...colors];
+    tileCount -= colorsPicklist.length;
+    renderTiles();
+});
 
 
 /*---------- Variables (state) ---------*/
@@ -95,31 +107,26 @@ const tileCount = colorsPicklist.length;
 // Define a variable for the computer's choice
 // Define a variable for the game message
 /* Declare state variable to track game status */
-
 //Game state
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndofMove = false;
- 
+
 /*----- Cached Element References  -----*/
 // Select the results display element
 /* Cache DOM elements for efficient acess */
-
-
+// Hidden Message Congratulations, You Win!
 const winMessage = document.getElementById('winMessage')
-
-const resetButton =document.getElementById('reset')
-resetButton.addEventListener('click',resetGame)
+// Reset Game button
+const resetButton = document.getElementById('reset')
+resetButton.addEventListener('click', resetGame)
 
 
 
 
 /*-------------- Functions -------------*/
-// Usingthe event listeners set up, assign the user's choice to the variable for the user's choice
-// Using a random number generator, assign the computer's choice to the variable for the computer's choice
+// Created tiles
 // Invoke get player choice function from play function
-// Invoke get computer choice function from play function
-
 function buildTile(color) {
     const element = document.createElement("div");
 
@@ -130,7 +137,7 @@ function buildTile(color) {
     element.addEventListener("click", () => {
         const revealed = element.getAttribute("data-revealed");
 
-        if(
+        if (
             awaitingEndofMove
             || revealed === "true"
             || element === activeTile
@@ -145,7 +152,7 @@ function buildTile(color) {
             return;
         }
 
-        
+
         const colorToMatch = activeTile.getAttribute("data-color");
         if (activeTile) {
             const colorToMatch = activeTile.getAttribute("data-color");
@@ -156,8 +163,8 @@ function buildTile(color) {
         }
 
 
-        if(colorToMatch === color) {
-            activeTile.setAttribute("data-revealed","true");
+        if (colorToMatch === color) {
+            activeTile.setAttribute("data-revealed", "true");
             element.setAttribute("data-revealed", "true");
 
 
@@ -182,97 +189,60 @@ function buildTile(color) {
 
             awaitingEndofMove = false;
             activeTile = null;
-        }, 1000); 
+        }, 1000);
     });
-
     return element;
 }
 
-
-
 // Render the game message to the DOM
-function init(){
+function init() {
     // Initalize game status and set up inital conditions
     // Create card pairs
-// Build up tiles
-// created tiles with for loop method
-tilesContainer.innerHTML = '';
-for (let i =0; i < tileCount; i++ ) {
-    const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
-    const color = colorsPicklist[randomIndex];
-    const tile = buildTile(color);
+    // Build up tiles
+    // created tiles with for loop method
+    tilesContainer.innerHTML = '';
+    for (let i = 0; i < tileCount; i++) {
+        const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
+        const color = colorsPicklist[randomIndex];
+        const tile = buildTile(color);
 
-    colorsPicklist.splice(randomIndex, 1);
-    tilesContainer.appendChild(tile);
-
-    //console.log(color);
-}
-    
-    //render();
-}
-
-//Render the game board
-function render(){
-    //Update the game's visual representation based on the current state
-    //const gameBoard = document.getElementById('gameBoard');
-    //gameBoard.innerHtml = ''; // Clear the game board
-
-    
-    } 
-
-    // Assume this function is called when a title
-    function handleEvent(event) {
-        // Process user input or other events
-        const activeTile = event.currentTarget// or however you’re targeting the tile
-        if (activeTile) {
-            const colorToMatch = activeTile.getAttribute("data-color");
-    console.log("Color to match:", colorToMatch);
-  } else {
-    console.error("activeTile is null or undefined.");
-  }
+        colorsPicklist.splice(randomIndex, 1);
+        tilesContainer.appendChild(tile);
+        //console.log(color);
     }
 
-
-    // Update game state
-function updateState(){
-    //Modify game state in response to events or game logic
-    // Check for win condition
-   
+}
+// Assume this function is called when a tile
+function handleEvent(event) {
+    // Process user input or other events
+    const activeTile = event.currentTarget// or however you’re targeting the tile
+    if (activeTile) {
+        const colorToMatch = activeTile.getAttribute("data-color");
+        console.log("Color to match:", colorToMatch);
+    } else {
+        console.error("activeTile is null or undefined.");
+    }
 }
 
-// Check for win condition
-function checkWinCondition(){
-    //Determine if a win or loss condition has been met
-   
-    
+function resetGame() {
+    // Reset the game to its inital state
+    let revealedCount = 0;
+    let activeTile = null;
+    let awaitingEndofMove = false;
+
+    tilesContainer.innerHTML = "";
+    winMessage.classList.add('hidden')
+    const newColorsPicklist = [...colors, ...colors];
+    // Re-build the tiles
+    for (let i = 0; i < tileCount; i++) {
+        const randomIndex = Math.floor(Math.random() * newColorsPicklist.length);
+        const color = newColorsPicklist[randomIndex];
+        const tile = buildTile(color);
+
+        newColorsPicklist.splice(randomIndex, 1);
+        tilesContainer.appendChild(tile);
+    }
 }
-
-function resetGame(){
-// Reset the game to its inital state
-let revealedCount = 0;
-let activeTile = null;
-let awaitingEndofMove = false;
-
-tilesContainer.innerHTML = "";
-winMessage.classList.add('hidden')
-const newColorsPicklist = [...colors, ...colors];
-   // Re-build the tiles
-   for (let i = 0; i < tileCount; i++) {
-    const randomIndex = Math.floor(Math.random() * newColorsPicklist.length);
-    const color = newColorsPicklist[randomIndex];
-    const tile = buildTile(color);
-
-    newColorsPicklist.splice(randomIndex, 1); 
-    tilesContainer.appendChild(tile); 
-}
-}
-
-
-
-
-//Create the button element
-//const startButton =document.createElement("button");
-//startButton.innerText ="Start Game"; // Set button text
 
 /*----------- Event Listeners ----------*/
 
@@ -282,11 +252,7 @@ const newColorsPicklist = [...colors, ...colors];
 
 document.querySelectorAll(".tile").forEach(tile => {
     tile.addEventListener("click", handleEvent);
- });
-// Add a click event listener to the button
-
-// Append the button to the game container
-
+});
 
 //Initialize game
 init();

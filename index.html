@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
   <script defer src="./js/app.js"></script>
-    <title> Color matching memory game</title>
+  <title> Color matching memory game</title>
 </head>
+
 <body>
   <h1>Memory Game</h1>
   <h2> Game Rule:</h2>
   <p>Match all the squares with the same color!</p>
- 
+
   <form class="color-count-picker-form">
     <label for="color-count-picker">Color Count: </Label>
     <select class="color-count-picker" id="color-count-picker">
-    <option value="8">8</option>
-    <option value="12">12</option> <option value="16">16</option>
+      <option value="8">8</option>
+      <option value="12">12</option>
+      <option value="16">16</option>
     </select>
-    </form>
+  </form>
 
-  <div class = "tiles"></div>
+  <div class="tiles"></div>
 
-<!--Hidden win message-->
-<div class = "hidden" id="winMessage">
-<p>Congratulations! You win!</p>
-</div>
-  
+  <!--Hidden win message-->
+  <div class="hidden" id="winMessage">
+    <p>Congratulations! You win!</p>
+  </div>
+
   <button id='reset'>Reset Game</button>
 
-  
 
-  
+
+
 
 </body>
+
 </html>
