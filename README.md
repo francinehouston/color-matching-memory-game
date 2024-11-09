@@ -71,10 +71,14 @@ Matching Logic: Compares the color values of two cards; if they match, they stay
 Win Condition: Ends the game when all pairs are matched, displaying a winning message.
 Restart Option: Resets the game state and shuffles the cards, allowing the player to start a new game.
 
+#Desktop version
 ![Project-1MemoryGame](https://github.com/user-attachments/assets/5f9a3a17-7e53-4657-949f-f3458a5fe878)
 
 
 [Game link](https://francinehouston.github.io/color-matching-memory-game/)
+
+#Mobile version
+![IMG_8992](https://github.com/user-attachments/assets/f24e7830-55ff-4d6f-a616-001177e0d81c)
 
 ## Attributions: 
 [YouTube](https://www.youtube.com/watch?v=bznJPt4t_4s)
