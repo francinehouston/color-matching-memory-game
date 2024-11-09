@@ -45,9 +45,24 @@ button {
   margin-top: 20px;
 }
 
-.color-count-picker-form {
+#select-color-amount {
   text-align: center;
   color: hotpink;
   font-size: 1em;
 
+}
+
+button{
+  background-color: hotpink;
+  color:#333333
+}
+
+.lightMode {
+  background-color:#F6E1CB;
+ border:#F54B22;
+}
+
+.darkMode {
+  background-color: #333333;
+  color:hotpink;
 }

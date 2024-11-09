@@ -88,19 +88,30 @@ const colorsMaster = ["aqua", "aquamarine", "crimson", "blue", "dodgerblue", "go
 let colorCount = 8;
 const colors = colorsMaster.slice(0, colorCount);
 const colorsPicklist = [...colors, ...colors];
-const tileCount = colorsPicklist.length;
+let tileCount = colorsPicklist.length;
 
-//console.log(colorPicklist);
 
-const colorCountPicker = document.querySelector('.color-count-picker');
-colorCountPicker.addEventListener('change', function () {
-    colorCount = parseInt(this.value);
-    colors = colorsMaster.slice(0, colorCount);
-    colorsPickList = [...colors, ...colors];
-    tileCount -= colorsPicklist.length;
-    renderTiles();
+const lightMode = document.querySelector('#lightModeBtn');
+const darkMode = document.querySelector('#darkModeBtn');
+
+lightMode.addEventListener('click', () => {
+    document.body.classList.add('lightMode');
+    document.body.classList.remove('darkMode');
+  })
+  
+  darkMode.addEventListener('click',() => {
+      document.body.classList.add('darkMode');
+      document.body.classList.remove('lightMode')
+  })
+  
+
+ 
+  
+  const colorAmountForm = document.getElementById('select-color-amount');
+    colorAmountForm.addEventListener('change', (event) => {
+   colorCount = event.target.value;
+    resetGame();
 });
-
 
 /*---------- Variables (state) ---------*/
 // Define a variable for the user's choice
@@ -127,7 +138,7 @@ resetButton.addEventListener('click', resetGame)
 /*-------------- Functions -------------*/
 // Created tiles
 // Invoke get player choice function from play function
-function buildTile(color) {
+function buildTile(color)  {
     const element = document.createElement("div");
 
     element.classList.add("tile");
@@ -178,7 +189,7 @@ function buildTile(color) {
 
             return;
         }
-        //console.log(activeTile);
+        //this code made activeTile work ; activeTile is the first tile checked on
 
         //down here
         awaitingEndofMove = true;
@@ -208,7 +219,7 @@ function init() {
 
         colorsPicklist.splice(randomIndex, 1);
         tilesContainer.appendChild(tile);
-        //console.log(color);
+        //this builds the tiles 
     }
 
 }
@@ -232,8 +243,11 @@ function resetGame() {
 
     tilesContainer.innerHTML = "";
     winMessage.classList.add('hidden')
+    const colors = colorsMaster.slice(0,colorCount)
     const newColorsPicklist = [...colors, ...colors];
+    //this console.log(colors) displayed the colors in the console log
     // Re-build the tiles
+    tileCount = newColorsPicklist.length
     for (let i = 0; i < tileCount; i++) {
         const randomIndex = Math.floor(Math.random() * newColorsPicklist.length);
         const color = newColorsPicklist[randomIndex];
@@ -253,6 +267,7 @@ function resetGame() {
 document.querySelectorAll(".tile").forEach(tile => {
     tile.addEventListener("click", handleEvent);
 });
+
 
 //Initialize game
 init();

@@ -12,15 +12,20 @@
 <body>
   <h1>Memory Game</h1>
   <h2> Game Rule:</h2>
-  <p>Match all the squares with the same color!</p>
 
-  <form class="color-count-picker-form">
-    <label for="color-count-picker">Color Count: </Label>
-    <select class="color-count-picker" id="color-count-picker">
+<section id = "header">
+<button id ="lightModeBtn">Light Mode</button>
+<button id ="darkModeBtn">Dark Mode</button>
+</section>
+
+<form id="select-color-amount">
+  <label for="color-amount">Match all the squares with the same color! Select the amount of colors:</label>
+  <select name="color-amount" id="color-amount">
       <option value="8">8</option>
       <option value="12">12</option>
       <option value="16">16</option>
-    </select>
+  </select>
+
   </form>
 
   <div class="tiles"></div>
