@@ -97,12 +97,12 @@ const darkMode = document.querySelector('#darkModeBtn');
 lightMode.addEventListener('click', () => {
     document.body.classList.add('lightMode');
     document.body.classList.remove('darkMode');
-  })
+  });
   
   darkMode.addEventListener('click',() => {
       document.body.classList.add('darkMode');
       document.body.classList.remove('lightMode')
-  })
+  });
   
 
  
